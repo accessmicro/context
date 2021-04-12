@@ -1,0 +1,91 @@
+.form {
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+label{
+  width: calc((100% - 40px) / 3);
+}
+label[for="name"] {
+  height: 50px;
+  line-height: 50px;
+}
+label[for="price"] {
+  height: 50px;
+  line-height: 50px;
+}
+
+input[type="text"] {
+  width: 60%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  background: -webkit-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background-size: 500%;
+  border: none;
+  font-size: 16px;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 50px;
+  width: 100px;
+}
+
+input[type="submit"]:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .form {
+    flex-flow: column nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  label {
+    width: 100%;
+  }
+  label span {
+    display: inline-block;
+    width: 20%;
+  }
+  input[type="text"] {
+    width: 80%;
+    float: right;
+    line-height: 32px;
+  }
+}
