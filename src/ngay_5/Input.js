@@ -10,7 +10,7 @@ const Input = (props) => {
           onChange={(event) => props.handleChange(event)}
           onBlur={(event) => props.handleBlur(event)}
         />
-        <span>{props.children}</span>
+        <div className='noti'>{props.children}</div>
     </label>
   );
 };

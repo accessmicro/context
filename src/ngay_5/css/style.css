@@ -19,7 +19,7 @@
   border-radius: 20px;
 }
 .model__left {
-  background-color: aqua;
+  background-color: rgba(190, 174, 174, 0.308);
   float: left;
   width: 50%;
   height: 100%;
@@ -31,6 +31,8 @@
   border-bottom-right-radius: unset;
 }
 .model__img {
+  filter: unset;
+  z-index: 3;
   width: 300px;
   height: 300px;
   overflow: hidden;
@@ -38,10 +40,11 @@
   box-shadow: 0px 10px 10px grey;
 }
 .model__img > img {
+  z-index: 3;
   object-fit: cover;
   height: 100%;
   width: 100%;
-  animation:spin 10s linear infinite;
+  animation: spin 10s linear infinite;
 }
 .model__right {
   padding: 60px 10px 60px 10px;
@@ -64,7 +67,6 @@ label {
   padding-right: 10%;
   width: 100%;
   height: 15%;
-  text-align: center;
 }
 /* label > span {
   position: absolute;
@@ -74,40 +76,60 @@ label {
   transform: translateY(-50%);
   z-index: 5;
 } */
-
-label:nth-child(2) > span::before {
+label:nth-child(2) > .noti::before,
+label:nth-child(3) > .noti::before,
+label:nth-child(4) > .noti::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 600;
   content: "\f0e0";
-  font-size: 16px;
+  font-size: 30px;
   position: absolute;
-  padding-left: calc(10% + 10px);
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-label:nth-child(3) > span::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 600;
-  content: "\f023";
-  font-size: 16px;
-  position: absolute;
-  padding-left: calc(10% + 10px);
+  padding-left: 15px;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
 }
 
-label:nth-child(4) > span::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 600;
-  content: "\f3c1";
-  font-size: 16px;
+small {
+  font-size: small;
+  padding-left: 50px;
   position: absolute;
-  padding-left: calc(10% + 10px);
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
+}
+label:nth-child(2) > .noti::before {
+  content: "\f0e0";
+}
+label:nth-child(3) > .noti::before {
+  content: "\f023";
+}
+
+label:nth-child(4) > .noti::before {
+  content: "\f3c1";
+}
+.noti {
+  padding-left: ;
+  position: absolute;
+  width: 80%;
+  /* background-color: #57b847; */
+
+  top: 0;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+}
+.noti .tick {
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.noti .tick i {
+  /* float: right; */
+  font-size: 30px;
 }
 input {
   height: 100%;
@@ -124,7 +146,8 @@ input:focus {
 }
 input[type="text"],
 input[type="password"] {
-  padding: 30px;
+  padding-left: 50px;
+  transition: all .3s ease;
 }
 input[type="submit"] {
   cursor: pointer;

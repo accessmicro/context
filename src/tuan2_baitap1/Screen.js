@@ -1,11 +1,11 @@
 import Button from "./Button";
+import React, { useState } from 'react';
 import { MyContext, randomColor } from "./data";
 
 const Screen = (props) => {
   let style = { width: "300px", height: "300px" };
-  let onSetBackground = (color, id) => {
-    document.querySelector(`.${id}`).style.backgroundColor = color;
-  };
+  
+  const [newColor, setnewColor] = useState(randomColor());
   return (
     <MyContext.Consumer>
       {([color, screen]) => (
@@ -14,10 +14,11 @@ const Screen = (props) => {
               {color}
             </div>
             <Button setBackground={()=>{
-                let newColor = randomColor()
+                 setnewColor(randomColor())
                 document.querySelector("."+screen).style.backgroundColor = newColor;
                 document.querySelector("."+screen).textContent = newColor
                 document.querySelector("."+screen).style.backgroundColor = newColor
+                console.log('color:', newColor)
             }} />
         </>
       )}
