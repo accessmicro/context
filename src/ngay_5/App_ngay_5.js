@@ -59,7 +59,7 @@ const App_ngay_5 = () => {
           "Mật khẩu phải chứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường...";
       } else if (password.length > 0) {
         state.password = false;
-        state.notiPassword = "Mật khẩu phải hơn hoặc bằng 8 kí tự hứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường...";
+        state.notiPassword = "Mật khẩu dài ít nhất 8 kí tự(chứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường).";
       } 
       else {
         state.password = false;
@@ -127,11 +127,13 @@ const App_ngay_5 = () => {
     <div className="model">
       <div className="model__left">
         <div className="model__img">
-          <img
-            src="https://cdn.dribbble.com/users/3844750/screenshots/10729124/media/2523facfa3e436b8331c316dcc4998f2.jpg"
-            alt="img"
-            title="Mật khẩu hơn 8 kí tự: ít nhất 1 chữ Hoa, 1 chũ thường, 1 số"
-          />
+          <a href='https://www.chatwork.com/#!rid224360512' target='_blank'>
+            <img
+              src="https://cdn.dribbble.com/users/3844750/screenshots/10729124/media/2523facfa3e436b8331c316dcc4998f2.jpg"
+              alt="img"
+              title="Mật khẩu hơn 8 kí tự: ít nhất 1 chữ Hoa, 1 chũ thường, 1 số"
+            />
+          </a>
         </div>
       </div>
       <div className="model__right">

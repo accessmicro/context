@@ -39,12 +39,17 @@
   border-radius: 50%;
   box-shadow: 0px 10px 10px grey;
 }
-.model__img > img {
+.model__img >a{
+  height: 100%;
+  width: 100%;
+}
+.model__img  img {
   z-index: 3;
   object-fit: cover;
   height: 100%;
   width: 100%;
   animation: spin 10s linear infinite;
+  
 }
 .model__right {
   padding: 60px 10px 60px 10px;
@@ -107,7 +112,6 @@ label:nth-child(4) > .noti::before {
   content: "\f3c1";
 }
 .noti {
-  padding-left: ;
   position: absolute;
   width: 80%;
   /* background-color: #57b847; */
