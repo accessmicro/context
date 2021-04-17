@@ -37,7 +37,7 @@ const App_ngay_5 = () => {
       //   : (state.username = false);
       if (validateEmail(username)) {
         state.username = true;
-        state.notiUsername = '';
+        state.notiUsername = "";
       } else if (username.length > 0) {
         state.username = false;
         state.notiUsername = "Chưa nhập đúng định dạng email...";
@@ -52,66 +52,64 @@ const App_ngay_5 = () => {
       //   : (state.password = false);
       if (validatePassword(password)) {
         state.password = true;
-        state.notiPassword = '';
+        state.notiPassword = "";
       } else if (password.length >= 8) {
         state.password = false;
         state.notiPassword =
           "Mật khẩu phải chứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường...";
       } else if (password.length > 0) {
         state.password = false;
-        state.notiPassword = "Mật khẩu dài ít nhất 8 kí tự(chứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường).";
-      } 
-      else {
+        state.notiPassword =
+          "Mật khẩu dài ít nhất 8 kí tự(chứa ít nhất 1 sô, 1 chữ in HOA, 1 chữ thường).";
+      } else {
         state.password = false;
         state.notiPassword = "Mời bạn nhập password...";
       }
-        if (state.password === true && password !== confirm && confirm.length!==0) {
+      if (
+        state.password === true &&
+        password !== confirm &&
+        confirm.length !== 0
+      ) {
         state.confirm = false;
         state.notiConfirm = "Mật khẩu không khớp...";
-      } 
-      if (state.password === true && password === confirm ) {
+      }
+      if (state.password === true && password === confirm) {
         state.confirm = true;
         state.notiConfirm = "";
-      } 
+      }
     }
     if (id === list[2]) {
       // password === confirm && password.length > 8
       //   ? (state.confirm = true)
       //   : (state.confirm = false);
       if (password.length === 0) {
-        state.notiConfirm = 'Hãy nhập password trước...'
+        state.notiConfirm = "Hãy nhập password trước...";
         state.confirm = false;
-      }
-      else if (!state.password) {
-        state.notiConfirm = 'Hãy nhập đúng password trước...'
+      } else if (!state.password) {
+        state.notiConfirm = "Hãy nhập đúng password trước...";
         state.confirm = false;
-      }
-      else if(confirm.length===0){
-        state.notiConfirm = 'Hãy nhập lại password...'
+      } else if (confirm.length === 0) {
+        state.notiConfirm = "Hãy nhập lại password...";
         state.confirm = false;
-
-      }
-      else if(confirm === password && state.password===true){
-        state.notiConfirm = ''
+      } else if (confirm === password && state.password === true) {
+        state.notiConfirm = "";
         state.confirm = true;
-        
-      }
-      else if(confirm !== password ){
-        state.notiConfirm = 'Mật khẩu không khớp...'
+      } else if (confirm !== password) {
+        state.notiConfirm = "Mật khẩu không khớp...";
         state.confirm = false;
-        
-      }
-      else {
-        
+      } else {
         state.confirm = false;
       }
     }
     setstate({ ...state });
-    console.table( state);
-    if(state.username === true && state.password === true && state.confirm === true){
-      return true
-    }
-    else return false
+    console.table(state);
+    if (
+      state.username === true &&
+      state.password === true &&
+      state.confirm === true
+    ) {
+      return true;
+    } else return false;
   };
   let handleSubmit = (event) => {
     onHandleBlur(event)
@@ -127,7 +125,7 @@ const App_ngay_5 = () => {
     <div className="model">
       <div className="model__left">
         <div className="model__img">
-          <a href='https://www.chatwork.com/#!rid224360512' target='_blank'>
+          <a href="https://www.chatwork.com/#!rid224360512" target="_blank">
             <img
               src="https://cdn.dribbble.com/users/3844750/screenshots/10729124/media/2523facfa3e436b8331c316dcc4998f2.jpg"
               alt="img"
